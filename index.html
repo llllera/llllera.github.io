@@ -1,3 +1,9 @@
+<html>
+<head>
+    <title>Задание №1</title>
+  </head>
+<body>
+    <h1>Сайт Печкановой Валерии</h1>
 <ol>
     <li><a href="http://kubsu.ru/">КубГУ</a></li>
     <li><a href="https://kubsu.ru/"  title="Официальный сайт Кубанского государственного университета">КубГУ</a></li>
@@ -6,5 +12,106 @@
         src="image.jpg" 
         alt="Цветок" 
         width="400"></a></li>
-    <li><a href="newpage.html">новая</a></li>
+    <li><a href="/newpage.html"> сокращенную ссылку на внутреннюю страницу</a></li>
+    <li><a href="#str">Ссылку на фрагмент текущей страницы</a><li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+   
+
 </ol>
+
+
+<h1>
+    <title >Форма</title>
+</h1>
+<form action="/"
+method="POST">
+
+<ol>
+    <li>
+        <label>
+            ФИО<br />
+            <input name="field-name-1" />
+          </label><br />
+    </li>
+    <li>
+        <label>
+            Номер телефона<br />
+            <input name="field-email"
+              type="tel"
+              placeholder="Введите номер телефона" />
+          </label><br />
+    </li>
+    <li><label>
+        email<br />
+        <input name="field-email"
+          type="email"
+          placeholder="Введите вашу почту" />
+      </label><br /></li>
+    <li>
+        <label>
+            Дата рождения<br />
+            <input name="field-date"
+              value="2019-08-13"
+              type="date" />
+          </label><br />
+    </li>
+    <li>
+        Пол<br />
+        <label><input type="radio" checked="checked"
+          name="radio-group-1" value="Значение1" />
+          Муж</label>
+        <label><input type="radio"
+          name="radio-group-1" value="Значение2" />
+          Жен</label><br />
+    </li>
+    <li>
+        <label id="str">
+            Любимый язык программирования:
+            <br />
+            <select name="field-name-4[]"
+              multiple="multiple">
+              <option value="Значение1">Pascal</option>
+              <option value="Значение2" selected="selected">C</option>
+              <option value="Значение4" selected="selected">C++</option>
+              <option value="Значение5" selected="selected">JavaScript</option>
+              <option value="Значение6" selected="selected">PHP</option>
+              <option value="Значение7" selected="selected">Python</option>
+              <option value="Значение8" selected="selected">Clojure</option>
+              <option value="Значение9" selected="selected"> Prolog</option>
+              <option value="Значение10" selected="selected">Scala</option>
+            </select>
+          </label><br />
+    </li>
+    <li>
+        <label>
+            Биография<br />
+            <textarea name="field-name-2"></textarea>
+          </label><br />
+    </li>
+    <li>
+        <br />
+      <label><input type="checkbox" checked="checked"
+        name="check-1" />
+        С контрактом ознакомлен (а)</label><br />
+    </li>
+    <li>
+        <input type="submit" value="Сохранить" />
+    </li>
+</ol>
+</form>
+</body>
+</html>
