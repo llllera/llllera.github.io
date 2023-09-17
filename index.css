@@ -1,0 +1,32 @@
+body{
+    margin:0;
+}
+header{
+    color: #AA00CC;
+    text-align: center;
+    background-color:#ccc; padding: 10px; height:120px;
+   
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 0;
+    }
+ul.nomber1 {
+
+    background-color: #AA00CC;
+    list-style: none;
+    text-decoration: none;
+    color:black;
+}
+a.nember2 {
+    text-decoration: none;
+    color:#ccc;
+}
+li.nomber3 {
+    display: inline;
+    padding: 30px;
+}
+    
