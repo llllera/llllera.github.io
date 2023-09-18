@@ -15,13 +15,16 @@ header{
     margin-right: 0;
     }
 ul.nomber1 {
-
+    margin: 0 0 0 auto;
+   
     background-color: #AA00CC;
     list-style: none;
     text-decoration: none;
     color:black;
+    width: 960px;
+    
 }
-a.nember2 {
+a.nomber2 {
     text-decoration: none;
     color:#ccc;
 }
@@ -29,4 +32,16 @@ li.nomber3 {
     display: inline;
     padding: 30px;
 }
-    
+footer{
+    background-color: #ccc;
+  
+    height: 120px;
+
+}
+.fot{
+    margin-top: 20px;
+    text-align: left;
+}
+.ooo{
+    padding: 20px;
+}
