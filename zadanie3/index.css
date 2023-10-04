@@ -11,13 +11,16 @@ header{
     order:0;
     margin-bottom: 5px;
 }
+.nazvanie{
+    margin-top: 39.2px;
+}
 .main{
     display: flex;
     flex-direction: column;
 }
 #logo {
-
-  
+    margin-top: 10px;
+    margin-bottom: 10px;
     float: left;
     }
 .nomber1 {
