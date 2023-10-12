@@ -3,38 +3,44 @@ body{
 }
 header{
     color: #000;
-    background-color: #edd1e2; padding: 10px; height:120px;
+    background-color: #edd1e2;
+    padding: 10px;
+    height:120px;
     font-size: large;
     text-align: center;
+    order:0;
+    margin-bottom: 5px;
+}
+.nazvanie{
+    margin-top: 39.2px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
 }
 #logo {
-    position: absolute;
-    padding: 8px;
-    width: 100px;
-    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     float: left;
     }
-ul.nomber1 {
-    margin: 0 0 0 auto;
-    background-color: #e3aecd;
-    list-style: none;
-    text-decoration: none;
+.nomber1 {
+    background-color: #edd1e2;
     color:black;
-    width: 30em;
-    max-width: 960px;
+    order: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 a.nomber2 {
+    display: block;
     text-decoration: none;
     color:#000;
-    margin: 5px 30px 5px 25px;
-}
-li.nomber3 {
-    display: inline-block;
+    margin: 5px 30px 5px 30px;
     font-size: 20pt;
 }
 footer{
     background-color: #edd1e2;
     height: 120px;
+    order: 5;
 }
 .fot{
     padding: 20px;
@@ -43,14 +49,21 @@ footer{
 a{
     color: #362830;
 }
-.osn{
+.osn_sslki, .osn_forma, .osn_table{
     background-color: #edd1e2;
-    width: 50em;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
+
+}
+.osn_table{
+    order: 2;
+}
+.osn_sslki{
+    order: 3;
+}
+.osn_forma{
+    order: 4;
 }
 .tchet {
     background-color:#edd1e2 ;
@@ -62,13 +75,47 @@ a{
 }
 
 table{
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+    width: 100%;
     height:200px ;
     background-color:#eb84c2;
     padding: 20px;
+    margin: 5px;
+
 }
 th{
     background-color:#eb84c2;
+}
+
+@media screen and (min-width: 800px) {
+    .osn_table{
+        order: 4;
+    }
+    .osn_sslki{
+        order: 2;
+    }
+    .osn_forma{
+        order: 3;
+    }
+    .osn_sslki, .osn_forma, .osn_table{
+        width: 50em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nomber1{
+        background-color: #e3aecd;
+        position: absolute;
+        right: 0;
+        width: 30vm;
+    }
+    a.nomber2{
+        display: inline;
+    }
+    table{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height:200px ;
+        background-color:#eb84c2;
+        padding: 20px;
+    }
 }
