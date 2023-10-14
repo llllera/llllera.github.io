@@ -1,115 +1,48 @@
-body{
-    margin:0;
-}
-header{
-    color: #000;
-    background-color: #edd1e2;
-    padding: 10px;
-    height:120px;
-    font-size: large;
-    text-align: center;
-    order:0;
-    margin-bottom: 5px;
-}
-.nazvanie{
-    margin-top: 39.2px;
-}
-.main{
-    display: flex;
-    flex-direction: column;
-}
-#logo {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    float: left;
-    }
-.nomber1 {
-    background-color: #edd1e2;
-    color:black;
-    order: 1;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-a.nomber2 {
-    display: block;
-    text-decoration: none;
-    color:#000;
-    margin: 5px 30px 5px 30px;
-    font-size: 20pt;
-}
-footer{
-    background-color: #edd1e2;
-    height: 120px;
-    order: 5;
-}
-.fot{
-    padding: 20px;
-    text-align: left;
+
+.header, footer{
+    background-color: #720c0c;
+    color: black;
+    height:170px;
 }
 a{
-    color: #362830;
+    color: aliceblue;
 }
-.osn_sslki, .osn_forma, .osn_table{
-    background-color: #edd1e2;
-    padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+body{
+    background-color: rgb(255   , 255, 255);
+    font-family: 'Playfair Display', serif;
+    color:rgb(255, 255, 255);
 
 }
-.osn_table{
-    order: 2;
-}
-.osn_sslki{
-    order: 3;
-}
-.osn_forma{
-    order: 4;
+.logo{
+    width: 120px;
+    height: 120px;
 }
 .tchet {
-    background-color:#edd1e2 ;
+    background-color:#b04c4c ;
     text-align: center;
 }
 .tnechet {
-    background-color:white;
+    background-color:rgb(255   , 255, 255);
     text-align: center;
 }
 
 table{
+    color: black;
     width: 100%;
     height:200px ;
     background-color:#eb84c2;
     padding: 20px;
     margin: 5px;
-
+}
+td{
+    border: 1px solid ;
 }
 th{
-    background-color:#eb84c2;
+    background-color:#720c0c;
+    color: rgb(255   , 255, 255);
 }
 
 @media screen and (min-width: 800px) {
-    .osn_table{
-        order: 4;
-    }
-    .osn_sslki{
-        order: 2;
-    }
-    .osn_forma{
-        order: 3;
-    }
-    .osn_sslki, .osn_forma, .osn_table{
-        width: 50em;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .nomber1{
-        background-color: #e3aecd;
-        position: absolute;
-        right: 0;
-        width: 30vm;
-    }
-    a.nomber2{
-        display: inline;
-    }
     table{
         margin-left: auto;
         margin-right: auto;
