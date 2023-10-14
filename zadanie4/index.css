@@ -11,7 +11,9 @@ body{
     background-color: rgb(255   , 255, 255);
     font-family: 'Playfair Display', serif;
     color:rgb(255, 255, 255);
-
+}
+.myimage{
+    width: 80%;
 }
 .logo{
     width: 120px;
