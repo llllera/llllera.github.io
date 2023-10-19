@@ -1,0 +1,56 @@
+
+.header, footer{
+    background-color: #720c0c;
+    color: black;
+    height:170px;
+}
+a{
+    color: aliceblue;
+}
+body{
+    background-color: rgb(255   , 255, 255);
+    font-family: 'Playfair Display', serif;
+    color:rgb(255, 255, 255);
+}
+.myimage{
+    width: 80%;
+}
+.logo{
+    width: 120px;
+    height: 120px;
+}
+.tchet {
+    background-color:#b04c4c ;
+    text-align: center;
+}
+.tnechet {
+    background-color:rgb(255   , 255, 255);
+    text-align: center;
+}
+
+table{
+    color: black;
+    width: 100%;
+    height:200px ;
+    background-color:#eb84c2;
+    padding: 20px;
+    margin: 5px;
+}
+td{
+    border: 1px solid ;
+}
+th{
+    background-color:#720c0c;
+    color: rgb(255   , 255, 255);
+}
+
+@media screen and (min-width: 800px) {
+    table{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height:200px ;
+        background-color:#eb84c2;
+        padding: 20px;
+    }
+}
