@@ -1,0 +1,32 @@
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+      Scanner scL=new Scanner(System.in);
+      StudentGroup sg=new StudentGroup();
+      System.out.println("Vvedite kol-vo ");
+      int n=sc.nextInt();
+      for(int j=0; j < n; j++){
+          System.out.println("Vvedide adres");
+          String f=scL.nextLine();
+          System.out.println("Vvedide FIO");
+          String ad=scL.nextLine();
+          System.out.println("Vvedide fakult");
+          String fak=scL.nextLine();
+          System.out.println("Vvedide kurs");
+          int kurs=sc.nextInt();
+          System.out.println("Vvedide kol-vo ocenok");
+          int k=sc.nextInt();
+          int []m= new int[k];
+          System.out.println("Vvedide ocenki");
+          for(int i=0; i < k ; i++) m[i]=sc.nextInt();
+       Student st= new Student(f, ad, fak, kurs, m);
+       sg.add(st);
+      }
+        System.out.println("Kogo udal?");
+        String f= scL.nextLine();
+        sg.del(f);
+        sg.print();
+    }}
