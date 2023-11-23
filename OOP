@@ -179,3 +179,138 @@ public class List<Item> {
         }
     }
 }
+
+
+
+
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Scanner l=new Scanner(System.in);
+        System.out.println("Введите кол-во клиентов");
+        int n=sc.nextInt();
+        Base b=new Base();
+        for(int i=0; i<n; i++) {
+            System.out.println("Введите фамилию");
+            String fio = l.nextLine();
+            System.out.println("Введите адресс");
+            String ad = l.nextLine();
+            System.out.println("Введите  информацию о заккзе");
+            String zak = l.nextLine();
+            System.out.println("Введите номер телефона");
+            int num = sc.nextInt();
+            Client c = new Client(fio, ad, zak, num);
+            b.add(c);
+        }
+        b.sortByFio();
+        b.print();
+        System.out.println("Кого удалить по фамилии?");
+        String fio0=l.nextLine();
+        b.del(fio0);
+        b.print();
+        System.out.println("Кого найти по номеру?");
+        int num1=sc.nextInt();
+        b.findByNum(num1);
+    }
+}
+
+import java.util.Comparator;
+class Client  {
+    String fio;
+    String adress;
+    String zak;
+    int tel;
+    Client(String fio, String adress, String zak, int tel){
+        this.fio=fio;
+        this.adress=adress;
+        this.zak=zak;
+        this.tel=tel;
+    }
+    public String toString(){
+        return "fio: "+fio+"\nadress: "+adress+"\nzakaz: "+zak+"\nphone: "+tel;
+    }
+    String getFio(){
+         return fio;
+    }
+    String getAdress(){
+        return adress;
+    }
+    int getNum(){
+        return tel;
+    }
+    String getZak(){
+        return zak;
+    }
+    public static Comparator<Client> FioComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getFio().compareTo(c2.getFio());
+        }
+    };
+    public static Comparator<Client> AdComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getAdress().compareTo(c2.getAdress());
+        }
+    };
+    public static Comparator<Client> ZakComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getZak().compareTo(c2.getZak());
+        }
+    };
+    public static Comparator<Client> NumComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getNum()-c2.getNum();
+        }
+    };
+}
+
+
+import java.util.*;
+public class Base {
+    ArrayList<Client> c;
+    Base(){
+        c=new ArrayList<Client>();
+    }
+    void add(Client c1){
+        c.add(c1);
+    }
+    void del(String fio){
+        int p=-1;
+        for(int i=0; i < c.size(); i++){
+            if(fio.equalsIgnoreCase(c.get(i).getFio())) p=i;
+        }
+        if(p>-1){
+            c.remove(p);
+            System.out.println("Удален клиент с фамилией: "+fio);
+        }
+        else System.out.println("Такого клиента нет!");
+    }
+    void findByNum(int fio){
+        int p=-1;
+        for(int i=0; i < c.size(); i++){
+            if(fio==c.get(i).getNum()) p=i;
+        }
+        if(p>-1){
+            System.out.println(c.get(p).toString());
+        }
+        else System.out.println("Такого клиента нет!");
+    }
+    void sortByFio(){
+        c.sort(Client.FioComp);
+    }
+    void sortByAd(){
+        c.sort(Client.AdComp);
+    }
+    void sortByZak(){
+        c.sort(Client.ZakComp);
+    }
+    void sortByNum(){
+        c.sort(Client.NumComp);
+    }
+    void print(){
+        for(int i=0; i<c.size(); i++)
+            System.out.println(c.get(i).toString());
+    }
+}
