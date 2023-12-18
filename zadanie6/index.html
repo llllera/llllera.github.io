@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link  href="index.css" rel="stylesheet" type="text/css">
-    <title>Задание №6</title>
+    <title>Задание №7</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@300;500;600&display=swap" rel="stylesheet">
@@ -190,20 +190,50 @@
           </tr>
         </table>
       </nav>
-      <nav class="col rounded col-12 col-md-8 order-last bg-dark my-4 text-primary">
+      <nav class="col rounded col-12 col-md-8 order-last bg-dark my-2 text-primary">
         <form class="p-2">
          
         <input
-        type="number" id="input" class="d-inline form-control" placeholder="Введите кол-во товаров" >
+        type="number" id="input0"  class="d-inline form-control" placeholder="Введите кол-во товаров" >
         <select name="select1">
           <option value="200">Дерево</option>
           <option value="1000">Окно</option>
           <option value="10000">Скамейка старинная</option>
           </select>
-          <button id="button1" onclick="return click1();">OK</button>
-          <div id="result"></div>
+          <button id="button1" >OK</button>
+          <div id="result0"></div>
         </form>
         </nav>
+
+
+        <nav class="col rounded col-12 col-md-8 order-last bg-dark my-2 text-primary">
+          <form class="p-2">
+           
+          <input
+          type="number" name = "prodCount" class="d-inline form-control" placeholder="Введите кол-во товаров" >
+          <select class="form-select-product" name="prodType" >
+            <option value="1">Дерево</option>
+            <option value="2">Скамейка старинная</option>
+            <option value="3">Оконная рама</option>
+            </select>
+          <div class="myradios" id = "radios" style="display: none;">
+            <label><input type = "radio" name = "prodOptions" value="op1" >С золотым напылением</label>
+            <label><input type = "radio" name = "prodOptions" value="op2">С серебряным напылением</label>
+
+            
+        </div>
+        
+        <div class = "calculator-checkbox" id = "checkboxes" style="display: none;">
+          
+            <lable><input type = "checkbox" name = "prodProperties" value="pr1">Роспись</lable>
+            <lable><input type = "checkbox" name = "prodProperties" value="pr2">Ставни</lable>
+            <lable><input type = "checkbox" name = "prodProperties" value="pr3">Двойные окна</lable>
+        </div>
+          
+           
+            <div id="result"></div>
+          </form>
+          </nav>
     </div>
     <footer class="container-fluid text-center border-top border-dark border-5 ">
       <div class="col p-5">
