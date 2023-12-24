@@ -473,3 +473,203 @@ public class Graf {
     }
 }
 
+оконный интерфейс индивидуалка
+import java.util.*;
+public class Base {
+    ArrayList<Client> c;
+    Base(){
+        c=new ArrayList<Client>();
+    }
+    public void add(Client c1){
+        c.add(c1);
+    }
+    /*new*/
+    public ArrayList<Client> getClientBase() {
+        return  c;
+    };
+    public Client getLast(){
+        return c.get(c.size()-1);
+    }
+    /**/
+    void del(String fio){
+        int p=-1;
+        for(int i=0; i < c.size(); i++){
+            if(fio.equalsIgnoreCase(c.get(i).getFio())) p=i;
+        }
+        if(p>-1){
+            c.remove(p);
+            System.out.println("Удален клиент с фамилией: "+fio);
+        }
+        else System.out.println("Такого клиента нет!");
+    }
+    void findByNum(String fio){
+        int p=-1;
+        for(int i=0; i < c.size(); i++){
+            if(fio.equals(c.get(i).getNum())) p=i;
+        }
+        if(p>-1){
+            System.out.println(c.get(p).toString());
+        }
+        else System.out.println("Такого клиента нет!");
+    }
+    void sortByFio(){
+        c.sort(Client.FioComp);
+    }
+    void sortByAd(){
+        c.sort(Client.AdComp);
+    }
+    void sortByZak(){
+        c.sort(Client.ZakComp);
+    }
+    void sortByNum(){
+        c.sort(Client.NumComp);
+    }
+    void print(){
+        for(int i=0; i<c.size(); i++)
+            System.out.println(c.get(i).toString());
+    }
+}
+
+import java.util.Comparator;
+class Client  {
+    String fio;
+    String adress;
+    String zak;
+    String tel;
+    Client(String fio, String adress, String zak, String tel){
+        this.fio=fio;
+        this.adress=adress;
+        this.zak=zak;
+        this.tel=tel;
+    }
+    public String toString(){
+        return "fio: "+fio+"\nadress: "+adress+"\nzakaz: "+zak+"\nphone: "+tel;
+    }
+    String getFio(){
+        return fio;
+    }
+    String getAdress(){
+        return adress;
+    }
+    String getNum(){
+        return tel;
+    }
+    String getZak(){
+        return zak;
+    }
+    public static Comparator<Client> FioComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getFio().compareTo(c2.getFio());
+        }
+    };
+    public static Comparator<Client> AdComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getAdress().compareTo(c2.getAdress());
+        }
+    };
+    public static Comparator<Client> ZakComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getZak().compareTo(c2.getZak());
+        }
+    };
+    public static Comparator<Client> NumComp=new Comparator<Client>(){
+        public int compare(Client c1, Client c2){
+            return c1.getNum().compareTo(c2.getNum());
+        }
+    };
+}
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import  java.awt.event.ActionEvent;
+import  java.util.*;
+public class MyPanel extends JPanel{
+    private JTextField fio, adress, zak, tel;
+    private JLabel fioL, adressL, zakL, telL;
+    private ArrayList<JTextField>  textFields= new ArrayList<>( Arrays.asList( fio, adress, zak, tel));
+    private ArrayList<JLabel> labels = new ArrayList<>(Arrays.asList(fioL, adressL, zakL, telL));
+    private ArrayList<String> names = new ArrayList<>(Arrays.asList("ФИО", "адресс", "информация о заказе", "телефон"));
+    private JButton deleteButton, addButton, sortButton;
+    private JList list;
+    DefaultListModel model;
+    MyPanel()
+    {
+        Base base = new Base();
+        for(int i = 0; i< textFields.size();i++)
+        {
+            labels.set(i, new JLabel(names.get(i)));
+            add(labels.get(i));
+            textFields.set(i, new JTextField());
+            textFields.get(i).setColumns(5);
+            add(textFields.get(i));
+        }
+        addButton = new JButton("Добавить");
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListIterator<JTextField> it = textFields.listIterator();
+                base.add(new Client(it.next().getText(),it.next().getText(),it.next().getText(),it.next().getText()));
+                model.addElement(base.getLast());
+                it = textFields.listIterator();
+                while (it.hasNext()) it.next().setText("");
+            }
+        });
+        add(addButton);
+
+        deleteButton = new JButton("Удалить");
+        deleteButton.addActionListener(e -> {
+            int selectedIndex = list.getSelectedIndex();
+            if (selectedIndex != -1) {
+                base.del(String.valueOf(base.getClientBase().get(selectedIndex)));
+                model.remove(selectedIndex);
+            }
+        });
+        add(deleteButton);
+
+        sortButton = new JButton("Отсортировать");
+        sortButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                base.sortByFio();
+                model = new DefaultListModel();
+                for ( Client CG: base.getClientBase() ) model.addElement(CG);
+                list.setModel(model);
+            }
+        });
+        add(sortButton);
+
+        model = new DefaultListModel<>();
+        list = new JList(model);
+        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+        JScrollPane listScroller = new JScrollPane(list);
+        listScroller.setPreferredSize(new Dimension(250,80));
+
+        add(list);
+
+
+
+    }
+
+}
+
+import javax.swing.*;
+
+public class MyFrame extends JFrame {
+    public MyFrame()
+    {
+        setSize(800,600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MyPanel panel = new MyPanel();
+        add(panel);
+        setVisible(true);
+    }
+
+}
+
+public class Graf {
+    public static void main(String[] args){
+        MyFrame frame = new MyFrame();
+    }
+}
