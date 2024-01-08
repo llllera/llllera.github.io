@@ -1,5 +1,5 @@
 function click1(event) {
-    window.location.href = 'https://llllera.github.io/zadanie8/index1.html';
+    window.location.href = 'https://llllera.github.io/zadanie9/index1.html';
 }
 
 
