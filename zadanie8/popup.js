@@ -3,9 +3,8 @@ function click1(event) {
 }
 
 
-
 window.addEventListener("DOMContentLoaded", function (event) {
     console.log("DOM fully loaded and parsed")
-    let button_popup = document.getElementById("button_open")
+    let button_popup = document.getElementById("popupOpen")
     button_popup.addEventListener("click", click1)
 })
